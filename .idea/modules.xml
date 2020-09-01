@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tes_shtQ.iml" filepath="$PROJECT_DIR$/.idea/tes_shtQ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tes_shtQ.iml" filepath="$PROJECT_DIR$/.idea/modules/Tes_shtQ.iml" group="Tes_shtQ" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Tes shtQ/app" />
     </modules>
   </component>
 </project>
