@@ -2,6 +2,7 @@ package com.tes.tesshtq.utils
 
 import android.content.Context
 import com.google.gson.GsonBuilder
+import com.tes.tesshtq.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

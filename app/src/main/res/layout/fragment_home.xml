@@ -7,10 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabAtasPesanan"
+        android:id="@+id/tabCategory"
         android:layout_width="match_parent"
         android:layout_height="@dimen/my_button_size"
-        android:layout_marginTop="20dp"
         android:background="@android:color/white"
         app:tabIndicator="@android:color/transparent"
         app:tabBackground="@drawable/tab_background_category"

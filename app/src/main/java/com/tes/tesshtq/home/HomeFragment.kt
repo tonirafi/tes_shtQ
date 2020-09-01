@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
@@ -19,7 +17,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
 
     private lateinit var ViewModel: HomeViewModel
-    lateinit var rootView: View
     internal lateinit var adapter: ListProdukAdapter
     private lateinit var dialog: ProgressDialog
 
@@ -32,16 +29,23 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         ViewModel = HomeViewModel(requireContext())
-        rootView = inflater.inflate(R.layout.fragment_home, container, false)
+
+        return inflater.inflate(R.layout.fragment_home, container, false)
+
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
 
         setUi()
         setLiveData()
-        return rootView
     }
 
 
     fun setUi() {
-
+        tabCategory.newTab()?.setCustomView(R.layout.tab_category)
+        tabCategory.newTab()?.customView?.findViewById<TextView>(R.id.tv_title)?.text="category.name"
 
         adapter = ListProdukAdapter(requireContext())
 
@@ -53,9 +57,9 @@ class HomeFragment : Fragment() {
             refresh()
         }
 
+        refresh()
 
-
-        tabAtasPesanan.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        tabCategory.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {
             }
 
@@ -78,25 +82,28 @@ class HomeFragment : Fragment() {
     fun setLiveData() {
         ViewModel.liveDataHome.observe(viewLifecycleOwner, Observer {
 
-            var listCategory=it.data?.category
-            var listProdak=it.data?.productPromo
 
-            listCategory?.forEachIndexed { index, category ->
 
-                tabAtasPesanan.newTab()?.setCustomView(R.layout.tab_category)
-                tabAtasPesanan.newTab()?.customView?.findViewById<TextView>(R.id.tv_title)?.text=category.name
-                var imageView:ImageView= tabAtasPesanan.newTab()?.customView?.findViewById<ImageView>(R.id.img_category)!!
-                Glide.with(requireActivity()).load(category.imageUrl).into(imageView)
-            }
+            if (it?.size != 0 ) {
 
-            swipe_refresh_layout.isRefreshing = false
-            if (listProdak?.size != 0 ) {
+                var listCategory= it[0].data?.category
+                var listProdak=it[0].data?.productPromo
+                listCategory?.forEachIndexed { index, category ->
+
+                    tabCategory.newTab()?.setCustomView(R.layout.tab_category)
+                    tabCategory.newTab()?.customView?.findViewById<TextView>(R.id.tv_title)?.text=category.name
+//                    var imageView:ImageView= tabCategory.newTab()?.customView?.findViewById<ImageView>(R.id.img_category)!!
+//                    Glide.with(requireActivity()).load(category.imageUrl).into(imageView)
+                }
                 adapter.addAll(listProdak!!)
 
             } else {
 
 //                Tools.showPesan(it.message, requireContext())
             }
+
+            swipe_refresh_layout.isRefreshing = false
+
 
         })
 

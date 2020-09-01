@@ -1,19 +1,14 @@
 package com.tes.tesshtq.utils
 
 
-import com.google.gson.JsonObject
 import com.tes.tesshtq.home.ResponseHome
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import com.tes.tesshtq.home.model.Data
+import retrofit2.http.GET
 import rx.Observable
 
 interface RestApi {
 
-    @Headers("Content-Type: application/json")
-    @POST("home")
-    fun getProdukHome(
-        @Body data: JsonObject
-    ): Observable<BaseResponse<ResponseHome>>
+    @GET("home")
+    fun getProdukHome(): Observable<ArrayList<Data<ResponseHome>>>
 
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.JsonObject
+import com.tes.tesshtq.home.model.Data
 import com.tes.tesshtq.utils.BaseResponse
 
 
@@ -12,7 +13,7 @@ class HomeViewModel(val context: Context?) : ViewModel() {
 
 
 
-    val liveDataHome = MutableLiveData<BaseResponse<ResponseHome>>()
+    val liveDataHome = MutableLiveData<ArrayList<Data<ResponseHome>>>()
     fun getDataHome(data: JsonObject) {
 
         produkRepository.getDataHome(data, {

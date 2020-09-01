@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#64B6FF</color>
+    <color name="colorPrimaryDark">#667EEA</color>
+    <color name="colorAccent">#ffbc3e</color>
+    <color name="colorPrimaryLight">#ffbc3e</color>
+    <color name="colorPrimaryBright">#FFD600</color>
+    <color name="myblue">#2699FB</color>
+
+    <color name="my_grey">#E2E2E2</color>
+    <color name="semi_transparent">#CCFFFFFF</color>
+    <color name="colorAccentRed">#FFFF0000</color>
+    <color name="gren1">#ccffb7</color>
+    <!--    <color name="colorAccentRed">#f04e42</color>-->
+    <color name="colorAccentBlue">#03a9f4</color>
+    <color name="colorAccentGreen">#3f3f3f</color>
+    <color name="textColorPrimaryDark">#757575</color>
+    <color name="textColorPrimaryLight">#bfbfbf</color>
+    <color name="textColorSecondary">#404040</color>
+    <color name="textColorSecondaryLight">#666666</color>
+    <color name="windowBackground">#eeeeee</color>
+    <color name="layoutBackgroundLight">#e0e0e0</color>
+    <color name="layoutPromo">#fbe19c</color>
+    <color name="black_overlay">#cc000000</color>
+    <color name="green_whatsapp">#29ac00</color>
+    <color name="green_pegasus">#AACF38</color>
+    <color name="green_pesanan">#ccffb7</color>
+    <color name="red_pesanan">#ffb7b7</color>
+    <color name="grey_lakuin">#EEEEEE</color>
+    <color name="black_80">#4B525A</color>
+    <color name="grey_300">#7E7D7D</color>
+    <color name="black_100">#25282b</color>
+    <color name="white_100">#FFFFFF</color>
+    <color name="yellow_50">#fcc02e</color>
+    <color name="blue">#00BCD4</color>
+    <color name="backround_1">#fbfbfb</color>
+    <color name="yellow_100">#fdb913</color>
+    <color name="grey_400">#FFFCFC</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="black1">#000000</color>
+    <color name="grey_2">#B5B4B4</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_cart_toko">#E9E9E9</color>
+    <color name="green_list_toko">#3F8700</color>
+    <color name="status_buka_toko">#3F8700</color>
+    <color name="grey_201">#F4F4F4</color>
+    <color name="grey">#EEEEEE</color>
+    <color name="read_100">#e52a34</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blackTransparent">#B2000000</color>
+    <color name="grey_smooth">#EEF1F1</color>
+    <color name="grey_transfaran">#4B7E7D7D</color>
+    <color name="white_transfaran">#9CFAF7F7</color>
+    <color name="red1">#ffb7b7</color>
+
 </resources>

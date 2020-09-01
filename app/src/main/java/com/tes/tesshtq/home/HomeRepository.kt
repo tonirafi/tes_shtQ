@@ -2,6 +2,7 @@ package com.tes.tesshtq.home
 
 import android.content.Context
 import com.google.gson.JsonObject
+import com.tes.tesshtq.home.model.Data
 import com.tes.tesshtq.utils.BaseResponse
 import com.tes.tesshtq.utils.RestAdapter
 import com.tes.tesshtq.utils.RestApi
@@ -13,11 +14,11 @@ class HomeRepository(val context: Context?) {
 
     fun getDataHome(
         data: JsonObject,
-        onResult: (BaseResponse<ResponseHome>) -> Unit,
+        onResult: (ArrayList<Data<ResponseHome>>) -> Unit,
         onError: (Throwable) -> Unit
     ) {
         val service: RestApi? = RestAdapter(context!!).callApi()
-        service?.getProdukHome(data)
+        service?.getProdukHome()
             ?.subscribeOn(Schedulers.newThread())
             ?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe(
