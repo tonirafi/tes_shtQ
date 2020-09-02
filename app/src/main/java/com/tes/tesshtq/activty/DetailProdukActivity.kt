@@ -1,10 +1,12 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.activty
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
+import com.tes.tesshtq.view_model.HomeViewModel
+import com.tes.tesshtq.model.ResponseHome
 import com.tes.tesshtq.utils.setSystemBarColor
 import com.tes.tesshtq.utils.snackBarSaller
 import kotlinx.android.synthetic.main.activity_detail_produk.*

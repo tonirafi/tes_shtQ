@@ -1,4 +1,4 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.activty
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
+import com.tes.tesshtq.view_model.HomeViewModel
+import com.tes.tesshtq.adapter.ListProdukAdapter
 import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity() {

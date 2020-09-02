@@ -1,4 +1,4 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
+import com.tes.tesshtq.activty.DetailProdukActivity
+import com.tes.tesshtq.model.ResponseHome
 import kotlinx.android.synthetic.main.item_produk.view.*
 
 
@@ -60,7 +62,8 @@ class ListProdukAdapter(private var ctx: Context) :
                 tv_harga.setText(listdata?.get(i)?.price!!)
 
                 lnrl_item_produk.setOnClickListener {
-                    var inten= Intent(ctx,DetailProdukActivity::class.java)
+                    var inten= Intent(ctx,
+                        DetailProdukActivity::class.java)
                     inten.putExtra("produk", listdata!![i])
                     ctx.startActivity(inten)
 

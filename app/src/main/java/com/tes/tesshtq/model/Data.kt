@@ -1,4 +1,4 @@
-package com.tes.tesshtq.home.model
+package com.tes.tesshtq.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

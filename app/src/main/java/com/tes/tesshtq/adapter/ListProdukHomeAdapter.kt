@@ -1,4 +1,4 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,13 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
-import kotlinx.android.synthetic.main.activity_detail_produk.*
-import kotlinx.android.synthetic.main.item_produk.view.*
+import com.tes.tesshtq.activty.DetailProdukActivity
+import com.tes.tesshtq.model.ResponseHome
 import kotlinx.android.synthetic.main.item_produk.view.imgProduk
 import kotlinx.android.synthetic.main.item_produk.view.tv_harga
 import kotlinx.android.synthetic.main.item_produk.view.tv_name_produk
 import kotlinx.android.synthetic.main.item_produk_home.view.*
-import org.jetbrains.anko.startActivity
 
 
 class ListProdukHomeAdapter(private var ctx: Context) :
@@ -90,7 +89,8 @@ class ListProdukHomeAdapter(private var ctx: Context) :
                 }
 
                 imgProduk.setOnClickListener {
-                    var inten= Intent(ctx,DetailProdukActivity::class.java)
+                    var inten= Intent(ctx,
+                        DetailProdukActivity::class.java)
                     inten.putExtra("produk", listdata!!.get(i))
                     ctx.startActivity(inten)
 

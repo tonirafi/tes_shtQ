@@ -1,4 +1,4 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.fragment
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -15,6 +14,9 @@ import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
+import com.tes.tesshtq.activty.SearchActivity
+import com.tes.tesshtq.adapter.ListProdukHomeAdapter
+import com.tes.tesshtq.view_model.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -33,7 +35,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        ViewModel = HomeViewModel(requireActivity().application)
+        ViewModel =
+            HomeViewModel(requireActivity().application)
 
         return inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -61,7 +64,8 @@ class HomeFragment : Fragment() {
         }
 
         lnrl_search.setOnClickListener {
-           var inten=Intent(requireContext(),SearchActivity::class.java)
+           var inten=Intent(requireContext(),
+               SearchActivity::class.java)
             startActivity(inten)
 
         }

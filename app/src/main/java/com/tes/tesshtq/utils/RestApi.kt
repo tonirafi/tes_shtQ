@@ -1,8 +1,8 @@
 package com.tes.tesshtq.utils
 
 
-import com.tes.tesshtq.home.ResponseHome
-import com.tes.tesshtq.home.model.Data
+import com.tes.tesshtq.model.ResponseHome
+import com.tes.tesshtq.model.Data
 import retrofit2.http.GET
 import rx.Observable
 

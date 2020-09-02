@@ -1,4 +1,4 @@
-package com.tes.tesshtq
+package com.tes.tesshtq.activty
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.tes.tesshtq.home.PurchasedActivity
-import com.tes.tesshtq.home.SearchActivity
+import com.tes.tesshtq.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,6 +47,12 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        navController.navigate(R.id.navigation_home)
 
     }
 

@@ -7,18 +7,18 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.tes.tesshtq.home.HomeFragment"
+        android:name="com.tes.tesshtq.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_feed"
-        android:name="com.tes.tesshtq.home.HomeFragment"
+        android:name="com.tes.tesshtq.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.tes.tesshtq.home.HomeFragment"
+        android:name="com.tes.tesshtq.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 

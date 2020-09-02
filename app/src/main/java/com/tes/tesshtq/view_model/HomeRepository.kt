@@ -1,11 +1,11 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.view_model
 
 import android.content.Context
 import android.os.AsyncTask
 import com.google.gson.JsonObject
-import com.tes.tesshtq.home.model.Data
+import com.tes.tesshtq.model.Data
+import com.tes.tesshtq.model.ResponseHome
 import com.tes.tesshtq.room.DAO
-import com.tes.tesshtq.utils.BaseResponse
 import com.tes.tesshtq.utils.RestAdapter
 import com.tes.tesshtq.utils.RestApi
 import rx.android.schedulers.AndroidSchedulers

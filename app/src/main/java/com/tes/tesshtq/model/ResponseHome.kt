@@ -1,4 +1,4 @@
-package com.tes.tesshtq.home
+package com.tes.tesshtq.model
 
 import android.os.Parcel
 import android.os.Parcelable

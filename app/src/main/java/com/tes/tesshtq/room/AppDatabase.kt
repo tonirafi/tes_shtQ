@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.tes.tesshtq.home.ResponseHome
+import com.tes.tesshtq.model.ResponseHome
 
 
 @Database(entities = arrayOf(ResponseHome.Produk::class), version = 1, exportSchema = false)
