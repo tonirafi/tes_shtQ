@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
 
         swipe_refresh_layout.setOnRefreshListener {
-            refresh()
+            getProduk()
         }
 
         lnrl_search.setOnClickListener {
@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
 
         }
 
-        refresh()
+        getCategory()
         
         tabCategory.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {
@@ -82,9 +82,7 @@ class HomeFragment : Fragment() {
 
             override fun onTabSelected(p0: TabLayout.Tab?) {
 
-//                if (isfirst){
-//                    refresh()
-//                }
+                    getProduk()
             }
 
         })
@@ -95,14 +93,12 @@ class HomeFragment : Fragment() {
 
 
     fun setLiveData() {
-        ViewModel.liveDataHome.observe(viewLifecycleOwner, Observer {
 
 
+        ViewModel.liveDataCategory.observe(viewLifecycleOwner, Observer {
 
             if (it?.size != 0 ) {
-
                 var listCategory= it[0].data?.category
-                var listProdak=it[0].data?.productPromo
                 listCategory?.forEachIndexed { index, category ->
 
                     tabCategory.addTab(tabCategory.newTab())
@@ -111,6 +107,20 @@ class HomeFragment : Fragment() {
                     Glide.with(requireActivity()).load(category.imageUrl).into(tabCategory.getTabAt(index)?.customView?.findViewById(R.id.img_category)!!)
 
                 }
+            } else {
+
+//                Tools.showPesan(it.message, requireContext())
+            }
+
+
+
+        })
+
+        ViewModel.liveDataProdak.observe(viewLifecycleOwner, Observer {
+
+            if (it?.size != 0 ) {
+
+                var listProdak=it[0].data?.productPromo
                 adapter.addAll(listProdak!!)
 
             } else {
@@ -124,16 +134,21 @@ class HomeFragment : Fragment() {
         })
 
 
+
     }
 
 
-    fun refresh() {
+    fun getProduk() {
         swipe_refresh_layout.isRefreshing = true
-        tabCategory.removeAllTabs()
         adapter.clear()
-        ViewModel.getDataHome(param)
+        ViewModel.getDataProduk()
     }
 
+    fun getCategory(){
+        tabCategory.removeAllTabs()
+        ViewModel.getDataCategory()
+
+    }
 
 
 

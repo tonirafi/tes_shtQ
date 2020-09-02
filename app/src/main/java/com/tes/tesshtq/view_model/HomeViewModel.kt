@@ -22,11 +22,24 @@ class HomeViewModel(val application: Application) : ViewModel() {
 
     }
 
-    val liveDataHome = MutableLiveData<ArrayList<Data<ResponseHome>>>()
-    fun getDataHome(data: JsonObject) {
+    val liveDataProdak = MutableLiveData<ArrayList<Data<ResponseHome>>>()
+    fun getDataProduk() {
 
-        produkRepository.getDataHome(data, {
-            liveDataHome.postValue(it)
+        produkRepository.getDataHome( {
+            liveDataProdak.postValue(it)
+        }, {
+//            context?.let { it1 ->
+//                Tools.showPesan(it.message.toString(), it1)
+//            }
+        })
+
+    }
+
+    val liveDataCategory = MutableLiveData<ArrayList<Data<ResponseHome>>>()
+    fun getDataCategory() {
+
+        produkRepository.getDataHome( {
+            liveDataCategory.postValue(it)
         }, {
 //            context?.let { it1 ->
 //                Tools.showPesan(it.message.toString(), it1)

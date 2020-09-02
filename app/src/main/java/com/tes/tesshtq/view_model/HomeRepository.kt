@@ -16,7 +16,6 @@ class HomeRepository(dao: DAO,val context: Context?) {
 
 
     fun getDataHome(
-        data: JsonObject,
         onResult: (ArrayList<Data<ResponseHome>>) -> Unit,
         onError: (Throwable) -> Unit
     ) {

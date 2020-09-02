@@ -50,7 +50,7 @@ class SearchActivity : AppCompatActivity() {
 
 
     fun setLiveData() {
-        ViewModel.liveDataHome.observe(this, Observer {
+        ViewModel.liveDataProdak.observe(this, Observer {
 
 
 
@@ -76,7 +76,7 @@ class SearchActivity : AppCompatActivity() {
     fun refresh() {
         swipe_refresh_layout.isRefreshing = true
         adapter.clear()
-        ViewModel.getDataHome(param)
+        ViewModel.getDataProduk()
     }
 
 
