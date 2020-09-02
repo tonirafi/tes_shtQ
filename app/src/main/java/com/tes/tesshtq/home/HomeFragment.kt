@@ -95,8 +95,7 @@ class HomeFragment : Fragment() {
                     tabCategory.addTab(tabCategory.newTab())
                     tabCategory.getTabAt(index)?.setCustomView(R.layout.tab_category)
                     tabCategory.getTabAt(index)?.customView?.findViewById<TextView>(R.id.tv_title)?.text=category.name
-//                    var imageView: ImageView = tabCategory.getTabAt(index)?.customView?.findViewById<ImageView>(R.id.img_category)!!
-//                    Glide.with(requireActivity()).load(category.imageUrl).into(imageView)
+                    Glide.with(requireActivity()).load(category.imageUrl).into(tabCategory.getTabAt(index)?.customView?.findViewById(R.id.img_category)!!)
 
                 }
                 adapter.addAll(listProdak!!)
