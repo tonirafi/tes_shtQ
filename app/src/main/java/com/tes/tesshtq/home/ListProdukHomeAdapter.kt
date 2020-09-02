@@ -91,7 +91,7 @@ class ListProdukHomeAdapter(private var ctx: Context) :
 
                 imgProduk.setOnClickListener {
                     var inten= Intent(ctx,DetailProdukActivity::class.java)
-                    inten.putExtra("produk", listdata!![i])
+                    inten.putExtra("produk", listdata!!.get(i))
                     ctx.startActivity(inten)
 
                 }

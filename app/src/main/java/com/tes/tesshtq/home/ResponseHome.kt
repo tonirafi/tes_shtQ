@@ -37,10 +37,10 @@ class ResponseHome {
     @Entity(tableName = "Produk")
     class Produk() : Parcelable {
 
-        @PrimaryKey
+        @PrimaryKey(autoGenerate = true)
         @SerializedName("id")
         @Expose
-        var id: String? = ""
+        var id: Int? = 0
 
         @SerializedName("imageUrl")
         @Expose
@@ -63,7 +63,7 @@ class ResponseHome {
         var loved: Int? = 0
 
         constructor(parcel: Parcel) : this() {
-            id = parcel.readString()
+            id = parcel.readValue(Int::class.java.classLoader) as? Int
             imageUrl = parcel.readString()
             title = parcel.readString()
             description = parcel.readString()
@@ -72,7 +72,7 @@ class ResponseHome {
         }
 
         override fun writeToParcel(parcel: Parcel, flags: Int) {
-            parcel.writeString(id)
+            parcel.writeValue(id)
             parcel.writeString(imageUrl)
             parcel.writeString(title)
             parcel.writeString(description)
@@ -93,6 +93,7 @@ class ResponseHome {
                 return arrayOfNulls(size)
             }
         }
+
 
     }
 }

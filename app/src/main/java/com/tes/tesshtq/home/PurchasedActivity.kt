@@ -28,7 +28,7 @@ class PurchasedActivity : AppCompatActivity() {
 
 
     fun setUi() {
-        ViewModel = HomeViewModel(this)
+        ViewModel = HomeViewModel(application)
         adapter = ListProdukAdapter(this)
 
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -49,14 +49,12 @@ class PurchasedActivity : AppCompatActivity() {
 
 
     fun setLiveData() {
-        ViewModel.liveDataHome.observe(this, Observer {
+        ViewModel.liveDataProduk.observe(this, Observer {
 
 
 
             if (it?.size != 0 ) {
-
-                var listProdak=it[0].data?.productPromo
-                adapter.addAll(listProdak!!)
+                adapter.addAll(it!!)
 
             } else {
 
@@ -75,7 +73,7 @@ class PurchasedActivity : AppCompatActivity() {
     fun refresh() {
         swipe_refresh_layout.isRefreshing = true
         adapter.clear()
-        ViewModel.getDataHome(param)
+        ViewModel.getListProduk()
     }
 
 

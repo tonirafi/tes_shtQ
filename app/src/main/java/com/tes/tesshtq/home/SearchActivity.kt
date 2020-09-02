@@ -27,7 +27,7 @@ class SearchActivity : AppCompatActivity() {
 
 
     fun setUi() {
-        ViewModel = HomeViewModel(this)
+        ViewModel = HomeViewModel(application)
         adapter = ListProdukAdapter(this)
 
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

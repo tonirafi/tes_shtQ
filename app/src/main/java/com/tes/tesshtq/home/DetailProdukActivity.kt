@@ -31,7 +31,7 @@ class DetailProdukActivity : AppCompatActivity() {
         }
 
 
-       produk=  intent.getSerializableExtra("produk")as ResponseHome.Produk
+       produk=  intent.getParcelableExtra<ResponseHome.Produk>("produk")as ResponseHome.Produk
 
         tv_name_produk.text=produk.title
         tv_deskrip_produk.text=produk.description
