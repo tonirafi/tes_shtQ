@@ -1,6 +1,7 @@
 package com.tes.tesshtq.home
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,8 +49,6 @@ class HomeFragment : Fragment() {
 
 
     fun setUi() {
-        tabCategory.newTab()?.setCustomView(R.layout.tab_category)
-        tabCategory.newTab()?.customView?.findViewById<TextView>(R.id.tv_title)?.text="category.name"
 
         adapter = ListProdukHomeAdapter(requireContext())
 
@@ -59,6 +58,12 @@ class HomeFragment : Fragment() {
 
         swipe_refresh_layout.setOnRefreshListener {
             refresh()
+        }
+
+        lnrl_search.setOnClickListener {
+           var inten=Intent(requireContext(),SearchActivity::class.java)
+            startActivity(inten)
+
         }
 
         refresh()

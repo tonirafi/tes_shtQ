@@ -59,7 +59,7 @@ class ListProdukHomeAdapter(private var ctx: Context) :
 
         when (getItemViewType(i)) {
             ITEM_VIEW_TYPE_CONTENT -> {
-                tv_name_produk.text =listdata?.get(i)?.title+" "+listdata?.get(i)!!.loved
+                tv_name_produk.text =listdata?.get(i)?.title
                 Glide.with(ctx).load(listdata?.get(i)?.imageUrl).into(imgProduk)
                 tv_harga.setText(listdata?.get(i)?.price!!)
                 var isFavorite = listdata?.get(i)!!.loved

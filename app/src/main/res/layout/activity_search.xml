@@ -23,50 +23,31 @@
 
             <ImageView
                 android:id="@+id/img_back"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/ic_baseline_favorite_border_24_false"
+                android:src="@drawable/ic_baseline_arrow_back_24"
 
                 />
 
-            <LinearLayout
+            <EditText
                 android:id="@+id/lnrl_search"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginRight="20dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"
+                android:textSize="14dp"
+                android:hint="Search"
                 android:background="@drawable/rounded_fuul_white"
                 android:layout_weight="1"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Search"
-                    android:paddingRight="10dp"
-                    android:textSize="14dp"/>
-            </LinearLayout>
+                />
 
         </LinearLayout>
 
 
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabCategory"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/white"
-        app:tabIndicator="@android:color/transparent"
-        app:tabMode="scrollable"
-        app:tabRippleColor="@null"
-        app:tabPaddingStart="0dp"
-        app:tabPaddingEnd="0dp"
-        app:tabSelectedTextColor="@android:color/black"
-        app:tabTextAppearance="@style/MyCustomTabTextAppearance"
-        app:tabTextColor="@android:color/black" />
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
             android:layout_width="wrap_content"
@@ -84,7 +65,7 @@
                     android:background="@color/white_100"
                     android:layout_marginStart="1dp"
                     android:layout_marginEnd="1dp"
-                    tools:listitem="@layout/item_produk_home"
+                    tools:listitem="@layout/item_produk"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
