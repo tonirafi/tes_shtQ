@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
@@ -70,7 +72,7 @@ class HomeFragment : Fragment() {
             override fun onTabSelected(p0: TabLayout.Tab?) {
 //                param.addProperty("statusTab", p0?.tag.toString().toInt())
 //                getIndicator()
-                refresh()
+//                refresh()
 
             }
 
@@ -90,10 +92,12 @@ class HomeFragment : Fragment() {
                 var listProdak=it[0].data?.productPromo
                 listCategory?.forEachIndexed { index, category ->
 
-                    tabCategory.newTab()?.setCustomView(R.layout.tab_category)
-                    tabCategory.newTab()?.customView?.findViewById<TextView>(R.id.tv_title)?.text=category.name
-//                    var imageView:ImageView= tabCategory.newTab()?.customView?.findViewById<ImageView>(R.id.img_category)!!
+                    tabCategory.addTab(tabCategory.newTab())
+                    tabCategory.getTabAt(index)?.setCustomView(R.layout.tab_category)
+                    tabCategory.getTabAt(index)?.customView?.findViewById<TextView>(R.id.tv_title)?.text=category.name
+//                    var imageView: ImageView = tabCategory.getTabAt(index)?.customView?.findViewById<ImageView>(R.id.img_category)!!
 //                    Glide.with(requireActivity()).load(category.imageUrl).into(imageView)
+
                 }
                 adapter.addAll(listProdak!!)
 
@@ -113,6 +117,7 @@ class HomeFragment : Fragment() {
 
     fun refresh() {
         swipe_refresh_layout.isRefreshing = true
+        tabCategory.removeAllTabs()
         adapter.clear()
         ViewModel.getDataHome(param)
     }
