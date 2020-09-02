@@ -28,6 +28,10 @@
         <activity
             android:name=".home.DetailProdukActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".home.PurchasedActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

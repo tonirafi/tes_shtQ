@@ -1,11 +1,14 @@
 package com.tes.tesshtq
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.tes.tesshtq.home.PurchasedActivity
+import com.tes.tesshtq.home.SearchActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,17 +30,18 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         navView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.navigation_home -> {
+                R.id.nav_home -> {
                     navController.navigate(R.id.navigation_home)
                 }
-                R.id.navigation_feed -> {
-                    navController.navigate(R.id.navigation_feed)
+                R.id.nav_feed -> {
+//                    navController.navigate(R.id.navigation_feed)
                 }
-                R.id.navigation_cart -> {
-                    navController.navigate(R.id.navigation_cart)
+                R.id.nav_cart -> {
+//                    navController.navigate(R.id.navigation_cart)
                 }
-                R.id.navigation_profile -> {
-                    navController.navigate(R.id.navigation_profile)
+                R.id.nav_profile -> {
+                    var inten= Intent(this, PurchasedActivity::class.java)
+                    startActivity(inten)
 
                 }
             }
@@ -46,5 +50,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
 }

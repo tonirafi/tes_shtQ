@@ -10,9 +10,13 @@ import kotlinx.android.synthetic.main.activity_detail_produk.*
 
 class DetailProdukActivity : AppCompatActivity() {
 
+    private lateinit var viewModel: HomeViewModel
+    private lateinit var  produk: ResponseHome.Produk
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_produk)
+        viewModel = HomeViewModel(application)
 
         setUi()
     }
@@ -26,11 +30,14 @@ class DetailProdukActivity : AppCompatActivity() {
             finish()
         }
 
-        tv_name_produk.text=intent.getStringExtra("nameProduk")
-        tv_deskrip_produk.text=intent.getStringExtra("deskripProduk")
-        tv_harga.text=intent.getStringExtra("price")
-        Glide.with(this).load(intent.getStringExtra("urlImage")).into(imgProduk)
-        var isFavorite = intent.getIntExtra("loved",0)
+
+       produk=  intent.getSerializableExtra("produk")as ResponseHome.Produk
+
+        tv_name_produk.text=produk.title
+        tv_deskrip_produk.text=produk.description
+        tv_harga.text=produk.price
+        Glide.with(this).load(produk.imageUrl).into(imgProduk)
+        var isFavorite = produk.loved
 
 
         if (isFavorite==1){
@@ -60,10 +67,17 @@ class DetailProdukActivity : AppCompatActivity() {
             shere(intent.getStringExtra("nameProduk").toString())
         }
 
+        bt_buy.setOnClickListener {
+            viewModel.insertProduk(produk)
+
+        }
+
 
 
 
     }
+
+
 
 
     fun shere(name:String){

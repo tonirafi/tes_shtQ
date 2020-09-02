@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        ViewModel = HomeViewModel(requireContext())
+        ViewModel = HomeViewModel(requireActivity().application)
 
         return inflater.inflate(R.layout.fragment_home, container, false)
 

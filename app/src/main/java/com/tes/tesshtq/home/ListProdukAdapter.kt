@@ -61,12 +61,7 @@ class ListProdukAdapter(private var ctx: Context) :
 
                 lnrl_item_produk.setOnClickListener {
                     var inten= Intent(ctx,DetailProdukActivity::class.java)
-
-                    inten.putExtra("nameProduk", listdata!![i].title)
-                    inten.putExtra("deskripProduk", listdata!![i].description)
-                    inten.putExtra("price", listdata!![i].price)
-                    inten.putExtra("urlImage", listdata!![i].imageUrl)
-                    inten.putExtra("loved", listdata!![i].loved)
+                    inten.putExtra("produk", listdata!![i])
                     ctx.startActivity(inten)
 
                 }

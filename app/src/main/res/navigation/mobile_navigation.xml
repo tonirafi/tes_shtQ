@@ -21,9 +21,7 @@
         android:name="com.tes.tesshtq.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.tes.tesshtq.home.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" />
+
+
+
 </navigation>

@@ -2,24 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_pesanan"
+        android:id="@+id/nav_home"
         android:icon="@drawable/ic_baseline_home_24"
         android:iconTint="@color/colorPrimary"
         android:title="Home" />
 
     <item
-        android:id="@+id/navigation_produk"
+        android:id="@+id/nav_feed"
         android:icon="@drawable/ic_baseline_satellite_24"
         android:iconTint="@color/colorPrimary"
         android:title="Feed" />
 
     <item
-        android:id="@+id/navigation_lainnya"
+        android:id="@+id/nav_cart"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:iconTint="@color/colorPrimary"
         android:title="Cart" />
     <item
-        android:id="@+id/navigation_pembeli"
+        android:id="@+id/nav_profile"
         android:icon="@drawable/ic_baseline_person_24"
         android:iconTint="@color/colorPrimary"
         android:title="Profile" />
