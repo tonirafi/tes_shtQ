@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
 import com.tes.tesshtq.utils.setSystemBarColor
+import com.tes.tesshtq.utils.snackBarSaller
 import kotlinx.android.synthetic.main.activity_detail_produk.*
+import java.lang.Exception
 
 class DetailProdukActivity : AppCompatActivity() {
 
@@ -68,7 +70,23 @@ class DetailProdukActivity : AppCompatActivity() {
         }
 
         bt_buy.setOnClickListener {
-            viewModel.insertProduk(produk)
+            try {
+                viewModel.insertProduk(produk)
+                snackBarSaller(
+                    this,
+                    findViewById(android.R.id.content),
+                    "Transaksi Berhasil",
+                    R.color.green_whatsapp
+                )
+            }catch (e:Exception){
+                snackBarSaller(
+                    this,
+                    findViewById(android.R.id.content),
+                    e.message.toString(),
+                    R.color.read_100
+                )
+            }
+
 
         }
 

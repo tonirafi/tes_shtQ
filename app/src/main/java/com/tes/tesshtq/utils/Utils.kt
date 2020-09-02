@@ -92,3 +92,18 @@ fun alertDialogBiasa(context: Context?, message: String?) {
 fun myInflate(parent: ViewGroup, resource: Int) =
     LayoutInflater.from(parent.context).inflate(resource, parent, false) as View
 
+fun snackBarSaller(context: Context,view: View, str: String,color: Int) {
+    val mSnackBar = Snackbar.make(
+        view, str, Snackbar.LENGTH_LONG
+    ).setAction("Action", null)
+    mSnackBar.setActionTextColor(Color.BLUE)
+    val mSnackBarView = mSnackBar.view
+    mSnackBarView.setBackgroundColor(ContextCompat.getColor(context, color))
+    val textView = mSnackBarView.findViewById(R.id.snackbar_text) as TextView
+    textView.setTextColor(Color.WHITE)
+    textView.textSize = 15f
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        textView.textAlignment = (View.TEXT_ALIGNMENT_CENTER)
+    }
+    mSnackBar.show()
+}

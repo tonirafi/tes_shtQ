@@ -38,9 +38,7 @@ class ResponseHome {
     class Produk() : Parcelable {
 
         @PrimaryKey(autoGenerate = true)
-        @SerializedName("id")
-        @Expose
-        var id: Int? = 0
+        var id: Int? = null
 
         @SerializedName("imageUrl")
         @Expose
