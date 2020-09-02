@@ -6,6 +6,11 @@ import android.view.*
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
 import kotlinx.android.synthetic.main.item_produk.view.*
+import kotlinx.android.synthetic.main.item_produk.view.imgProduk
+import kotlinx.android.synthetic.main.item_produk.view.tv_harga
+import kotlinx.android.synthetic.main.item_produk.view.tv_name_produk
+import kotlinx.android.synthetic.main.item_produk_home.view.*
+import org.jetbrains.anko.startActivity
 
 
 class ListProdukHomeAdapter(private var ctx: Context) :
@@ -49,13 +54,38 @@ class ListProdukHomeAdapter(private var ctx: Context) :
         var tv_name_produk = holder.itemView.tv_name_produk
         var tv_harga = holder.itemView.tv_harga
         var imgProduk = holder.itemView.imgProduk
+        var btnIsFavorite = holder.itemView.btnIsFavorite
 
 
         when (getItemViewType(i)) {
             ITEM_VIEW_TYPE_CONTENT -> {
-                tv_name_produk.text =listdata?.get(i)?.title
+                tv_name_produk.text =listdata?.get(i)?.title+" "+listdata?.get(i)!!.loved
                 Glide.with(ctx).load(listdata?.get(i)?.imageUrl).into(imgProduk)
                 tv_harga.setText(listdata?.get(i)?.price!!)
+                var isFavorite = listdata?.get(i)!!.loved
+
+                if (isFavorite==1){
+                    btnIsFavorite.setImageResource(R.drawable.ic_baseline_favorite_24_true)
+                }
+                else{
+                    btnIsFavorite.setImageResource(
+                        R.drawable.ic_baseline_favorite_border_24_false
+                    )
+
+                }
+
+                btnIsFavorite.setOnClickListener {
+                        if (isFavorite==1) {
+                            btnIsFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24_false)
+                            isFavorite=0
+
+                        } else {
+                            btnIsFavorite.setImageResource(R.drawable.ic_baseline_favorite_24_true)
+                            isFavorite=1
+
+                        }
+
+                }
             }
             else -> {
                 /** nothing to do in here */

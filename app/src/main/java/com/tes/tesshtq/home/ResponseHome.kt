@@ -55,7 +55,7 @@ class ResponseHome {
 
         @SerializedName("loved")
         @Expose
-        var loved: String? = ""
+        var loved: Int? = 0
 
     }
 }
