@@ -19,8 +19,10 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
 
     private lateinit var ViewModel: HomeViewModel
-    internal lateinit var adapter: ListProdukAdapter
+    internal lateinit var adapter: ListProdukHomeAdapter
     private lateinit var dialog: ProgressDialog
+    private var isfirst=true
+
 
 
     val param = JsonObject()
@@ -49,7 +51,7 @@ class HomeFragment : Fragment() {
         tabCategory.newTab()?.setCustomView(R.layout.tab_category)
         tabCategory.newTab()?.customView?.findViewById<TextView>(R.id.tv_title)?.text="category.name"
 
-        adapter = ListProdukAdapter(requireContext())
+        adapter = ListProdukHomeAdapter(requireContext())
 
         val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager
@@ -60,7 +62,7 @@ class HomeFragment : Fragment() {
         }
 
         refresh()
-
+        
         tabCategory.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {
             }
@@ -70,13 +72,15 @@ class HomeFragment : Fragment() {
             }
 
             override fun onTabSelected(p0: TabLayout.Tab?) {
-//                param.addProperty("statusTab", p0?.tag.toString().toInt())
-//                getIndicator()
-//                refresh()
 
+//                if (isfirst){
+//                    refresh()
+//                }
             }
 
         })
+
+        isfirst=false
 
     }
 

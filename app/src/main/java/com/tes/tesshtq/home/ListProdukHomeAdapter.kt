@@ -8,8 +8,8 @@ import com.tes.tesshtq.R
 import kotlinx.android.synthetic.main.item_produk.view.*
 
 
-class ListProdukAdapter(private var ctx: Context) :
-    RecyclerView.Adapter<ListProdukAdapter.ViewHolder>(){
+class ListProdukHomeAdapter(private var ctx: Context) :
+    RecyclerView.Adapter<ListProdukHomeAdapter.ViewHolder>(){
     private val ITEM_VIEW_TYPE_CONTENT = 0
     private val ITEM_VIEW_TYPE_LOADING = 1
 
@@ -35,7 +35,7 @@ class ListProdukAdapter(private var ctx: Context) :
 
         return when (viewType) {
             ITEM_VIEW_TYPE_CONTENT -> ViewHolderContent(
-                layoutInflater.inflate(R.layout.item_produk, parent, false)
+                layoutInflater.inflate(R.layout.item_produk_home, parent, false)
             )
             else -> ViewHolderLoading(
                 layoutInflater.inflate(R.layout.item_data_loading, parent, false)
