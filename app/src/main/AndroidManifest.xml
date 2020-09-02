@@ -24,6 +24,10 @@
         <activity
             android:name=".home.SearchActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".home.DetailProdukActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

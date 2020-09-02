@@ -1,6 +1,7 @@
 package com.tes.tesshtq.home
 
 import android.content.Context
+import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import com.bumptech.glide.Glide
@@ -49,6 +50,7 @@ class ListProdukAdapter(private var ctx: Context) :
         var tv_name_produk = holder.itemView.tv_name_produk
         var tv_harga = holder.itemView.tv_harga
         var imgProduk = holder.itemView.imgProduk
+        var lnrl_item_produk = holder.itemView.lnrl_item_produk
 
 
         when (getItemViewType(i)) {
@@ -56,6 +58,18 @@ class ListProdukAdapter(private var ctx: Context) :
                 tv_name_produk.text =listdata?.get(i)?.title
                 Glide.with(ctx).load(listdata?.get(i)?.imageUrl).into(imgProduk)
                 tv_harga.setText(listdata?.get(i)?.price!!)
+
+                lnrl_item_produk.setOnClickListener {
+                    var inten= Intent(ctx,DetailProdukActivity::class.java)
+
+                    inten.putExtra("nameProduk", listdata!![i].title)
+                    inten.putExtra("deskripProduk", listdata!![i].description)
+                    inten.putExtra("price", listdata!![i].price)
+                    inten.putExtra("urlImage", listdata!![i].imageUrl)
+                    inten.putExtra("loved", listdata!![i].loved)
+                    ctx.startActivity(inten)
+
+                }
             }
             else -> {
                 /** nothing to do in here */

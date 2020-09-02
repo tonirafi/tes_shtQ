@@ -1,10 +1,12 @@
 package com.tes.tesshtq.home
 
 import android.content.Context
+import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
+import kotlinx.android.synthetic.main.activity_detail_produk.*
 import kotlinx.android.synthetic.main.item_produk.view.*
 import kotlinx.android.synthetic.main.item_produk.view.imgProduk
 import kotlinx.android.synthetic.main.item_produk.view.tv_harga
@@ -86,6 +88,19 @@ class ListProdukHomeAdapter(private var ctx: Context) :
                         }
 
                 }
+
+                imgProduk.setOnClickListener {
+                    var inten= Intent(ctx,DetailProdukActivity::class.java)
+
+                    inten.putExtra("nameProduk", listdata!![i].title)
+                    inten.putExtra("deskripProduk", listdata!![i].description)
+                    inten.putExtra("price", listdata!![i].price)
+                    inten.putExtra("urlImage", listdata!![i].imageUrl)
+                    inten.putExtra("loved", listdata!![i].loved)
+                    ctx.startActivity(inten)
+
+                }
+
             }
             else -> {
                 /** nothing to do in here */

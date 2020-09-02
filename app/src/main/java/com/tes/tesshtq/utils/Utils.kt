@@ -1,5 +1,6 @@
 package com.tes.tesshtq.utils
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
@@ -8,8 +9,11 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.tes.tesshtq.R
 import java.text.DecimalFormat
@@ -58,6 +62,15 @@ fun changeWithoutRupiah(price: Int): String {
     val formatter = DecimalFormat("#,###")
     val convert = formatter.format(price)
     return convert.replace(",", ".")
+}
+
+fun setSystemBarColor(act: Activity, @ColorRes color: Int) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        val window = act.window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.statusBarColor = ContextCompat.getColor(act, color)
+    }
 }
 
 fun loading(ctx: Context) {
