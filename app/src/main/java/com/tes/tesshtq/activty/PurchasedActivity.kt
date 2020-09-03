@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
 import com.tes.tesshtq.view_model.ProdukViewModel
-import com.tes.tesshtq.adapter.ListProdukAdapter
+import com.tes.tesshtq.adapter.ListProdukPurchasedAdapter
 import kotlinx.android.synthetic.main.activity_purchased.*
 
 class PurchasedActivity : AppCompatActivity() {
 
     private lateinit var viewModel: ProdukViewModel
-    internal lateinit var adapter: ListProdukAdapter
+    internal lateinit var purchasedAdapter: ListProdukPurchasedAdapter
 
 
     val param = JsonObject()
@@ -31,11 +31,11 @@ class PurchasedActivity : AppCompatActivity() {
 
     fun setUi() {
         viewModel = ProdukViewModel(application)
-        adapter = ListProdukAdapter(this)
+        purchasedAdapter = ListProdukPurchasedAdapter(this)
 
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager
-        recyclerView.adapter = adapter
+        recyclerView.adapter = purchasedAdapter
 
         img_back.setOnClickListener {
             finish()
@@ -56,7 +56,7 @@ class PurchasedActivity : AppCompatActivity() {
 
 
             if (it?.size != 0 ) {
-                adapter.addAll(it!!)
+                purchasedAdapter.addAll(it!!)
 
             } else {
 
@@ -74,7 +74,7 @@ class PurchasedActivity : AppCompatActivity() {
 
     fun refresh() {
         swipe_refresh_layout.isRefreshing = true
-        adapter.clear()
+        purchasedAdapter.clear()
         viewModel.getAllPurchased()
     }
 

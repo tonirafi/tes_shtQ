@@ -11,8 +11,8 @@ import com.tes.tesshtq.model.ResponseHome
 import kotlinx.android.synthetic.main.item_produk.view.*
 
 
-class ListProdukAdapter(private var ctx: Context) :
-    RecyclerView.Adapter<ListProdukAdapter.ViewHolder>(){
+class ListProdukPurchasedAdapter(private var ctx: Context) :
+    RecyclerView.Adapter<ListProdukPurchasedAdapter.ViewHolder>(){
     private val ITEM_VIEW_TYPE_CONTENT = 0
     private val ITEM_VIEW_TYPE_LOADING = 1
 

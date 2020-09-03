@@ -53,6 +53,7 @@ class ListProdukLocalAdapter(private var ctx: Context) :
         var tv_name_produk = holder.itemView.tv_name_produk
         var tv_harga = holder.itemView.tv_harga
         var imgProduk = holder.itemView.imgProduk
+        var lnrl_item_produk = holder.itemView.lnrl_item_produk
 
 
         when (getItemViewType(i)) {
@@ -60,6 +61,21 @@ class ListProdukLocalAdapter(private var ctx: Context) :
                 tv_name_produk.text =listdata?.get(i)?.title
                 Glide.with(ctx).load(listdata?.get(i)?.imageUrl).into(imgProduk)
                 tv_harga.setText(listdata?.get(i)?.price!!)
+
+                var produk=ResponseHome.Produk()
+                produk.id=listdata?.get(i)?.id
+                produk.title=listdata?.get(i)?.title
+                produk.description=listdata?.get(i)?.description
+                produk.loved=listdata?.get(i)?.loved
+                produk.price=listdata?.get(i)?.price
+                produk.imageUrl=listdata?.get(i)?.imageUrl
+
+                lnrl_item_produk.setOnClickListener {
+                    var inten= Intent(ctx,DetailProdukActivity::class.java)
+                    inten.putExtra("produk", produk)
+                    ctx.startActivity(inten)
+
+                }
 
 
             }
