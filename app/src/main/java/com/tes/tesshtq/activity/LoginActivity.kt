@@ -17,6 +17,7 @@ import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.tes.tesshtq.R
+import com.tes.tesshtq.utils.snackBarSaller
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
@@ -48,6 +49,19 @@ class LoginActivity : AppCompatActivity() {
 
         sign_in_button.setOnClickListener {
             signIn()
+        }
+
+        bt_login.setOnClickListener {
+            if(validasi()){
+                getHome()
+            }else{
+                snackBarSaller(
+                    this,
+                    findViewById(android.R.id.content),
+                    "User Name & Password Tidak Boleh Kosong",
+                    R.color.read_100
+                )
+            }
         }
 
 
@@ -92,6 +106,7 @@ class LoginActivity : AppCompatActivity() {
     fun getHome(){
         var intent=Intent(this@LoginActivity,MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 
@@ -120,6 +135,22 @@ class LoginActivity : AppCompatActivity() {
 
                 }
             })
+    }
+
+
+    fun validasi():Boolean{
+
+        return when {
+            ed_username.text.toString().equals("") -> {
+                false
+            }
+            ed_password.text.toString().equals("") -> {
+                false
+            }
+            else -> {
+                true
+            }
+        }
     }
 
 }
