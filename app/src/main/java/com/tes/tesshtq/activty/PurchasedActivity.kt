@@ -6,13 +6,13 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
-import com.tes.tesshtq.view_model.HomeViewModel
+import com.tes.tesshtq.view_model.ProdukViewModel
 import com.tes.tesshtq.adapter.ListProdukAdapter
 import kotlinx.android.synthetic.main.activity_purchased.*
 
 class PurchasedActivity : AppCompatActivity() {
 
-    private lateinit var ViewModel: HomeViewModel
+    private lateinit var viewModel: ProdukViewModel
     internal lateinit var adapter: ListProdukAdapter
 
 
@@ -30,7 +30,7 @@ class PurchasedActivity : AppCompatActivity() {
 
 
     fun setUi() {
-        ViewModel = HomeViewModel(application)
+        viewModel = ProdukViewModel(application)
         adapter = ListProdukAdapter(this)
 
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -51,7 +51,7 @@ class PurchasedActivity : AppCompatActivity() {
 
 
     fun setLiveData() {
-        ViewModel.liveDataPurchased.observe(this, Observer {
+        viewModel.liveDataPurchased.observe(this, Observer {
 
 
 
@@ -75,7 +75,7 @@ class PurchasedActivity : AppCompatActivity() {
     fun refresh() {
         swipe_refresh_layout.isRefreshing = true
         adapter.clear()
-        ViewModel.getAllPurchased()
+        viewModel.getAllPurchased()
     }
 
 

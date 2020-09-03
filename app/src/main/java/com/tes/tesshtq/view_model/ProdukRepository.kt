@@ -11,7 +11,7 @@ import com.tes.tesshtq.utils.RestApi
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
-class HomeRepository(dao: DAO,val context: Context?) {
+class ProdukRepository(dao: DAO, val context: Context?) {
     private var dao: DAO = dao
 
 

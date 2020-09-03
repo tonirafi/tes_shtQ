@@ -10,15 +10,15 @@ import com.tes.tesshtq.room.AppDatabase
 import com.tes.tesshtq.room.DAO
 
 
-class HomeViewModel(val application: Application) : ViewModel() {
-    private var produkRepository : HomeRepository
+class ProdukViewModel(val application: Application) : ViewModel() {
+    private var produkRepository : ProdukRepository
     private var dao: DAO
 
     init {
 
         dao = AppDatabase.getDatabase(application).DAO()
         produkRepository =
-            HomeRepository(dao, application)
+            ProdukRepository(dao, application)
 
     }
 

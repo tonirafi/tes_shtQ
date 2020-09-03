@@ -8,21 +8,19 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
-import com.tes.tesshtq.view_model.HomeViewModel
-import com.tes.tesshtq.adapter.ListProdukAdapter
+import com.tes.tesshtq.view_model.ProdukViewModel
 import com.tes.tesshtq.adapter.ListProdukLocalAdapter
 import com.tes.tesshtq.model.ProdakSearch
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.activity_search.img_back
 import kotlinx.android.synthetic.main.activity_search.recyclerView
 import kotlinx.android.synthetic.main.activity_search.swipe_refresh_layout
-import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 import kotlin.collections.ArrayList
 
 class SearchActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: ProdukViewModel
     internal lateinit var adapter: ListProdukLocalAdapter
 
 
@@ -39,7 +37,7 @@ class SearchActivity : AppCompatActivity() {
 
 
     fun setUi() {
-        viewModel = HomeViewModel(application)
+        viewModel = ProdukViewModel(application)
         adapter = ListProdukLocalAdapter(this)
         setData()
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

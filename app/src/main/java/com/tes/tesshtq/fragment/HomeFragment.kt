@@ -16,12 +16,12 @@ import com.google.gson.JsonObject
 import com.tes.tesshtq.R
 import com.tes.tesshtq.activty.SearchActivity
 import com.tes.tesshtq.adapter.ListProdukHomeAdapter
-import com.tes.tesshtq.view_model.HomeViewModel
+import com.tes.tesshtq.view_model.ProdukViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private lateinit var ViewModel: HomeViewModel
+    private lateinit var viewModel: ProdukViewModel
     internal lateinit var adapter: ListProdukHomeAdapter
     private lateinit var dialog: ProgressDialog
     private var isfirst=true
@@ -35,8 +35,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        ViewModel =
-            HomeViewModel(requireActivity().application)
+        viewModel =
+            ProdukViewModel(requireActivity().application)
 
         return inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -95,7 +95,8 @@ class HomeFragment : Fragment() {
     fun setLiveData() {
 
 
-        ViewModel.liveDataCategory.observe(viewLifecycleOwner, Observer {
+        viewModel.liveDataCategory.observe(viewLifecycleOwner, Observer {
+            swipe_refresh_layout.isRefreshing = false
 
             if (it?.size != 0 ) {
                 var listCategory= it[0].data?.category
@@ -111,13 +112,12 @@ class HomeFragment : Fragment() {
 
 //                Tools.showPesan(it.message, requireContext())
             }
-            swipe_refresh_layout.isRefreshing = false
 
 
 
         })
 
-        ViewModel.liveDataProdak.observe(viewLifecycleOwner, Observer {
+        viewModel.liveDataProdak.observe(viewLifecycleOwner, Observer {
 
             if (it?.size != 0 ) {
 
@@ -142,14 +142,14 @@ class HomeFragment : Fragment() {
     fun getProduk() {
         swipe_refresh_layout.isRefreshing = true
         adapter.clear()
-        ViewModel.getDataProduk()
+        viewModel.getDataProduk()
     }
 
     fun getCategory(){
         swipe_refresh_layout.isRefreshing = true
 
         tabCategory.removeAllTabs()
-        ViewModel.getDataCategory()
+        viewModel.getDataCategory()
 
     }
 

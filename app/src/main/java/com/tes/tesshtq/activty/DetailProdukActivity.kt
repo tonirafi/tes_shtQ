@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
-import com.tes.tesshtq.view_model.HomeViewModel
+import com.tes.tesshtq.view_model.ProdukViewModel
 import com.tes.tesshtq.model.ResponseHome
 import com.tes.tesshtq.utils.setSystemBarColor
 import com.tes.tesshtq.utils.snackBarSaller
@@ -14,13 +14,13 @@ import java.lang.Exception
 
 class DetailProdukActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: ProdukViewModel
     private lateinit var  produk: ResponseHome.Produk
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_produk)
-        viewModel = HomeViewModel(application)
+        viewModel = ProdukViewModel(application)
 
         setUi()
     }
