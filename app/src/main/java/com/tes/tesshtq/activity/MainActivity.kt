@@ -1,4 +1,4 @@
-package com.tes.tesshtq.activty
+package com.tes.tesshtq.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

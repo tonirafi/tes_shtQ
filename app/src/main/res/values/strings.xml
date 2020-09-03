@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tes shtQ</string>
+    <string name="facebook_app_id">170881020202302</string> <string name="fb_login_protocol_scheme">fb170881020202302</string>
+
 </resources>

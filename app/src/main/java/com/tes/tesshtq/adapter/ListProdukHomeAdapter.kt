@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import com.bumptech.glide.Glide
 import com.tes.tesshtq.R
-import com.tes.tesshtq.activty.DetailProdukActivity
+import com.tes.tesshtq.activity.DetailProdukActivity
 import com.tes.tesshtq.model.ResponseHome
 import kotlinx.android.synthetic.main.item_produk.view.imgProduk
 import kotlinx.android.synthetic.main.item_produk.view.tv_harga

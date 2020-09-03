@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.JsonObject
 import com.tes.tesshtq.R
-import com.tes.tesshtq.activty.SearchActivity
+import com.tes.tesshtq.activity.SearchActivity
 import com.tes.tesshtq.adapter.ListProdukHomeAdapter
 import com.tes.tesshtq.view_model.ProdukViewModel
 import kotlinx.android.synthetic.main.fragment_home.*

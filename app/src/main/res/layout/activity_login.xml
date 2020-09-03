@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/bt_facebook"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:background="@drawable/rounded_fuul_white"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/facebook"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="Login Dengan Facebook"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sign_in_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:background="@drawable/rounded_fuul_white"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/google"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="Login Dengan Google"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

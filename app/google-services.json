@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "509538716935",
+    "firebase_url": "https://dynamic-cove-285520.firebaseio.com",
+    "project_id": "dynamic-cove-285520",
+    "storage_bucket": "dynamic-cove-285520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509538716935:android:5b03395287cebc040189a2",
+        "android_client_info": {
+          "package_name": "com.tes.tesshtq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509538716935-q1u2l66qtddi5a86of1e6lt4j5vj0obj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNONgosv6y6ggkb2lmW4m4r23rASheDfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509538716935-q1u2l66qtddi5a86of1e6lt4j5vj0obj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
