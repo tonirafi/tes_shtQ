@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.tes.tesshtq.model.ProdakSearch
 import com.tes.tesshtq.model.ResponseHome
 
 
-@Database(entities = arrayOf(ResponseHome.Produk::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(ResponseHome.Produk::class,ProdakSearch::class), version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun DAO(): DAO

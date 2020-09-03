@@ -3,8 +3,8 @@ package com.tes.tesshtq.view_model
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.gson.JsonObject
 import com.tes.tesshtq.model.Data
+import com.tes.tesshtq.model.ProdakSearch
 import com.tes.tesshtq.model.ResponseHome
 import com.tes.tesshtq.room.AppDatabase
 import com.tes.tesshtq.room.DAO
@@ -48,14 +48,30 @@ class HomeViewModel(val application: Application) : ViewModel() {
 
     }
 
-    fun insertProduk(produk: ResponseHome.Produk) {
+    fun insertPurchased(produk: ResponseHome.Produk) {
+        produkRepository.insertPurchased(produk)
+    }
+
+    val liveDataPurchased = MutableLiveData<ArrayList<ResponseHome.Produk>>()
+
+    fun getAllPurchased() {
+        liveDataPurchased.postValue(produkRepository.getAllPurchased())
+
+    }
+
+
+    fun insertProduk(produk: ProdakSearch) {
         produkRepository.insertProduk(produk)
     }
 
-    val liveDataProduk = MutableLiveData<ArrayList<ResponseHome.Produk>>()
+    fun deleteAllProduk() {
+        produkRepository.deleteAllProdak()
+    }
 
-    fun getListProduk() {
-        liveDataProduk.postValue(produkRepository.getAllProduk())
+    val liveDataProdukLocal = MutableLiveData<ArrayList<ProdakSearch>>()
+
+    fun getListProduk(title: String) {
+        liveDataProdukLocal.postValue(produkRepository.getAllProduk("%$title%"))
 
     }
 }

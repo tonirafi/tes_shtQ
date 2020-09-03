@@ -111,6 +111,7 @@ class HomeFragment : Fragment() {
 
 //                Tools.showPesan(it.message, requireContext())
             }
+            swipe_refresh_layout.isRefreshing = false
 
 
 
@@ -145,6 +146,8 @@ class HomeFragment : Fragment() {
     }
 
     fun getCategory(){
+        swipe_refresh_layout.isRefreshing = true
+
         tabCategory.removeAllTabs()
         ViewModel.getDataCategory()
 

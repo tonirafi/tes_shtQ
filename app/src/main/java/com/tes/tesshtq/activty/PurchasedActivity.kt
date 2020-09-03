@@ -51,7 +51,7 @@ class PurchasedActivity : AppCompatActivity() {
 
 
     fun setLiveData() {
-        ViewModel.liveDataProduk.observe(this, Observer {
+        ViewModel.liveDataPurchased.observe(this, Observer {
 
 
 
@@ -75,7 +75,7 @@ class PurchasedActivity : AppCompatActivity() {
     fun refresh() {
         swipe_refresh_layout.isRefreshing = true
         adapter.clear()
-        ViewModel.getListProduk()
+        ViewModel.getAllPurchased()
     }
 
 

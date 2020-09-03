@@ -73,7 +73,7 @@ class DetailProdukActivity : AppCompatActivity() {
 
         bt_buy.setOnClickListener {
             try {
-                viewModel.insertProduk(produk)
+                viewModel.insertPurchased(produk)
                 snackBarSaller(
                     this,
                     findViewById(android.R.id.content),
